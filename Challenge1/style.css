@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #c3f63b;
+  background-size: cover;
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  cursor: pointer;
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+  height: 2.8rem;
+  border: none;
+  border-radius: 25px;
+  color: #c3f63b;
+  background: #353b48;
+  outline: none;
+  padding: 0.5rem 2.8rem;
+  box-shadow: 0.5rem 0.5rem #f5f6fa;
+}
+
+/* change button colors and shadow with smooth transition */
+button:hover {
+  color: #353b48;
+  background: #f5f6fa;
+  transform: translate(0, 0.5rem);
+  box-shadow: -0.5rem -0.5rem #353b48;
+  transition: 0.2s;
+}
