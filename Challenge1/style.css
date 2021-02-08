@@ -1,11 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+
 body {
   margin: 0;
   min-height: 100vh;
   background-color: #c3f63b;
   background-size: cover;
   color: black;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: 700;
+  /* font-family: "Open Sans", Verdana, Geneva, Tahoma, sans-serif; */
   text-align: center;
   display: flex;
   align-items: center;
@@ -15,6 +16,7 @@ body {
 button {
   cursor: pointer;
   font-size: 1rem;
+  font-family: "Open Sans", Verdana, Geneva, Tahoma, sans-serif;
   letter-spacing: 0.2rem;
   height: 2.8rem;
   border: none;
@@ -22,7 +24,7 @@ button {
   color: #c3f63b;
   background: #353b48;
   outline: none;
-  padding: 0.5rem 2.8rem;
+  padding: 0.5rem 2.6rem;
   box-shadow: 0.5rem 0.5rem #f5f6fa;
 }
 
