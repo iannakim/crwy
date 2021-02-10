@@ -4,8 +4,8 @@ body {
   background-color:#9c88ff;
   background-size: cover;
   color: black;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: 700;
+  font-family: 'Helvetica Neue';
+  font-weight: 400;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,26 +16,77 @@ body {
 }
 
 input {
+  content: '';
   width: 100%;
   padding: 15px 15px;
   margin: 15px 0;
   box-sizing: border-box;
   border: none;
   box-shadow: 8px 8px 5px #8c7ae6;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
   outline: none;
 }
 
-input:hover:focus {
-  transform: scale(1.08);
-  border: 4px solid #2c3e50;
+
+/* snake hover effect */
+input:before{
+  position: absolute;
+
+  height: 0;
+  width: 0;
+  border: 8px solid transparent;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+
+input:after{
+  position: absolute;
+  content: '';
+  height: 0;
+  width: 0;
+  border: 8px solid transparent;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
 }
 
 
 
+input:hover:before{
+  
+  height:100px;
+  width: 320px;
+  border: 8px solid black;
+  border-right: none;
+  border-bottom: none;
+  transition: height 0.5s linear,
+              width 0.5s linear 0.5s;
+}
+
+input:hover:after{
+  height:100px;
+  width: 320px;
+  border: 8px solid black;
+  border-left: none;
+  border-top: none;
+  transition: height 0.5s linear,
+              width 0.5s linear 0.5s;
+}
+/* why is the before and after action not responding? */
+
+
+input:hover {
+  transform: scale(1.08);
+  border: 3px solid #2c3e50;
+  transition: 0.2s;
+}
+
 label {
-  color: #ffffff;
+  color: #fff;
+  width: 380px;
   display: none;
  }
-/* input:focus + label { display: block; } */
+
+
+ 
+input:focus + label { display: block; }
