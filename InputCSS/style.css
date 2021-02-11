@@ -11,82 +11,206 @@ body {
   justify-content: center;
 }
 
-.form-container {
-  padding-left: 10px;
-}
 
-input {
+/* input {
   content: '';
   width: 100%;
   padding: 15px 15px;
-  margin: 15px 0;
+  margin: 5px 5px;
   box-sizing: border-box;
   border: none;
-  box-shadow: 8px 8px 5px #8c7ae6;
   outline: none;
+} */
+
+
+.btn {
+  width: 400px;
+  height: 100%;
+  margin: 20px 0px 20px 0px;
+  padding: 5px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 8px 8px 5px #8c7ae6;
+  z-index: 0;
+  transition: 1s;
 }
 
-
-/* snake hover effect */
-input:before{
+/* .btn::before, .btn::after {
   position: absolute;
-
-  height: 0;
-  width: 0;
-  border: 8px solid transparent;
-  bottom: 0;
-  left: 0;
-  box-sizing: border-box;
-}
-
-input:after{
-  position: absolute;
+  background: transparent;
+  z-index: -1;
+  transition: 1s;
   content: '';
-  height: 0;
-  width: 0;
-  border: 8px solid transparent;
-  top: 0;
-  right: 0;
-  box-sizing: border-box;
-}
+} */
 
+/* .btn::before {
+  height: 50px;
+  width: 130px;
+} */
 
+/* .btn::after {
+  width: 130px;
+  height: 30px;
+} */
 
-input:hover:before{
-  
-  height:100px;
-  width: 320px;
-  border: 8px solid black;
-  border-right: none;
-  border-bottom: none;
-  transition: height 0.5s linear,
-              width 0.5s linear 0.5s;
-}
+/* .noselect {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+} */
 
-input:hover:after{
-  height:100px;
-  width: 320px;
-  border: 8px solid black;
-  border-left: none;
-  border-top: none;
-  transition: height 0.5s linear,
-              width 0.5s linear 0.5s;
-}
-/* why is the before and after action not responding? */
+/* .btn:hover::before {
+  width: 0px;
+  background: #2c3e50;
+} */
 
+/* .btn:hover::after {
+  height: 0px;
+  background:  #2c3e50;
+} */
 
-input:hover {
-  transform: scale(1.08);
-  border: 3px solid #2c3e50;
-  transition: 0.2s;
-}
+/* .btn:hover {
+  background:  #2c3e50;
+} */
 
+/* html {
+  font-family: 'Lora', sans-serif;
+  width: 100%;
+} */
+
+/* body {
+  margin: 5% auto 0 auto;
+  width: 90%;
+  max-width: 1125px;
+} */
+
+/* h1 {
+  font-size: 28px;
+  margin-bottom: 2.5%;
+} */
+
+input,
+span,
 label {
-  color: #fff;
-  width: 380px;
+  font-family: 'Ubuntu', sans-serif;
+  display: block;
+  margin: 10px;
+  padding: 5px;
+  border: none;
+  font-size: 22px;
+}
+
+input:focus {
+  outline: 0;
+}
+/* Box */
+
+input.box {
+  font-size: 48px;
+  font-weight: 300;
+  border-radius: 2px;
+  margin: 0;
+  border: none;
+  width: 80%;
+  background: rgba(0, 0, 0, 0);
+  transition: padding-top 0.2s ease, margin-top 0.2s ease;
+  overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
+}
+/* Underline and Placeholder */
+
+input.box + label {
+  display: block;
+  position: relative;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  width: 10%;
+  border: none;
+  -webkit-transition: width 0.4s ease;
+  transition: width 0.4s ease;
+  height: 0px;
+}
+
+input.box:focus + label {
+  width: 80%;
+}
+
+input.box:focus,
+input.box:valid {
+  padding-top: 35px;
+}
+
+textarea.box:valid,
+textarea.box:focus {
+  margin-top: 35px;
+}
+
+input.box:focus + label > span,
+input.box:valid + label > span {
+  top: -100px;
+  font-size: 22px;
+  color: rgb(255, 255, 255);
+}
+
+textarea.box:focus + label > span,
+textarea.box:valid + label > span {
+  top: -150px;
+  font-size: 22px;
+  color: rgb(255, 255, 255);
+}
+
+input.box:valid + label,
+textarea.box:valid + label {
+  border-color: green;
+}
+
+input.box:invalid,
+textarea.box:invalid {
+  box-shadow: none;
+}
+
+input.box + label > span,
+textarea.box + label > span {
+  font-weight: 300;
+  margin: 0;
+  position: absolute;
+  color: #060606;
+  font-size: 48px;
+  top: -66px;
+  left: 0px;
+  z-index: -1;
+  -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+  transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+
+
+input.box:valid ~ input[type="submit"], textarea.box:valid ~ input[type="submit"] {
+  -webkit-animation: appear 1s forwards;
+  animation: appear 1s forwards;
+}
+
+input.box:invalid ~ input[type="submit"], textarea.box:invalid ~ input[type="submit"] {
   display: none;
- }
+}
 
+@-webkit-keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
 
- 
-input:focus + label { display: block; }
+@keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+
