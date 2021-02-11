@@ -11,93 +11,6 @@ body {
   justify-content: center;
 }
 
-
-/* input {
-  content: '';
-  width: 100%;
-  padding: 15px 15px;
-  margin: 5px 5px;
-  box-sizing: border-box;
-  border: none;
-  outline: none;
-} */
-
-
-.btn {
-  width: 400px;
-  height: 100%;
-  margin: 20px 0px 20px 0px;
-  padding: 5px;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  box-shadow: 8px 8px 5px #8c7ae6;
-  z-index: 0;
-  transition: 1s;
-}
-
-/* .btn::before, .btn::after {
-  position: absolute;
-  background: transparent;
-  z-index: -1;
-  transition: 1s;
-  content: '';
-} */
-
-/* .btn::before {
-  height: 50px;
-  width: 130px;
-} */
-
-/* .btn::after {
-  width: 130px;
-  height: 30px;
-} */
-
-/* .noselect {
-  -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-} */
-
-/* .btn:hover::before {
-  width: 0px;
-  background: #2c3e50;
-} */
-
-/* .btn:hover::after {
-  height: 0px;
-  background:  #2c3e50;
-} */
-
-/* .btn:hover {
-  background:  #2c3e50;
-} */
-
-/* html {
-  font-family: 'Lora', sans-serif;
-  width: 100%;
-} */
-
-/* body {
-  margin: 5% auto 0 auto;
-  width: 90%;
-  max-width: 1125px;
-} */
-
-/* h1 {
-  font-size: 28px;
-  margin-bottom: 2.5%;
-} */
-
 input,
 span,
 label {
@@ -106,101 +19,74 @@ label {
   margin: 10px;
   padding: 5px;
   border: none;
-  font-size: 22px;
+  font-size: 14px;
 }
 
 input:focus {
-  outline: 0;
+  outline: none;
 }
-/* Box */
 
 input.box {
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 300;
   border-radius: 2px;
   margin: 0;
+  padding: 5px;
   border: none;
-  width: 80%;
-  background: rgba(0, 0, 0, 0);
+  width: 100%;
+  background: #fff;
+  box-shadow: 8px 8px 5px #8c7ae6;
   transition: padding-top 0.2s ease, margin-top 0.2s ease;
-  overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
+  overflow-x: hidden;
 }
-/* Underline and Placeholder */
+
+input.box:hover {
+  border: solid 4px #060606;
+  transition: .2s;
+}
 
 input.box + label {
   display: block;
   position: relative;
   white-space: nowrap;
-  padding: 0;
-  margin: 0;
-  width: 10%;
   border: none;
   -webkit-transition: width 0.4s ease;
   transition: width 0.4s ease;
   height: 0px;
+  z-index:999;
 }
 
 input.box:focus + label {
   width: 80%;
 }
 
+
 input.box:focus,
 input.box:valid {
-  padding-top: 35px;
-}
-
-textarea.box:valid,
-textarea.box:focus {
-  margin-top: 35px;
+  border: none;
 }
 
 input.box:focus + label > span,
 input.box:valid + label > span {
   top: -100px;
-  font-size: 22px;
-  color: rgb(255, 255, 255);
+  left: -15px;
+  font-size: 14px;
+  color: rgb(249, 249, 249);
 }
 
-textarea.box:focus + label > span,
-textarea.box:valid + label > span {
-  top: -150px;
-  font-size: 22px;
-  color: rgb(255, 255, 255);
-}
-
-input.box:valid + label,
-textarea.box:valid + label {
-  border-color: green;
-}
-
-input.box:invalid,
-textarea.box:invalid {
-  box-shadow: none;
-}
-
-input.box + label > span,
-textarea.box + label > span {
+input.box + label > span {
   font-weight: 300;
   margin: 0;
   position: absolute;
-  color: #060606;
-  font-size: 48px;
-  top: -66px;
-  left: 0px;
+  color: #7b7979;
+  font-size: 18px;
+  top: -56px;
   z-index: -1;
   -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
   transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
 }
 
 
-input.box:valid ~ input[type="submit"], textarea.box:valid ~ input[type="submit"] {
-  -webkit-animation: appear 1s forwards;
-  animation: appear 1s forwards;
-}
-
-input.box:invalid ~ input[type="submit"], textarea.box:invalid ~ input[type="submit"] {
-  display: none;
-}
 
 @-webkit-keyframes appear {
   100% {
